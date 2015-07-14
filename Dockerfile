@@ -21,5 +21,5 @@ WORKDIR /app/src
 CMD node server.js
 EXPOSE 9000
 
-ONBUILD COPY camo /app/src
-ONBUILD RUN npm install
+COPY camo /app/src
+RUN npm install
