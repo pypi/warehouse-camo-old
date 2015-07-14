@@ -6,7 +6,7 @@ WORKDIR /app
 
 ENV HOME /app
 ENV NODE_ENGINE 0.10.29
-ENV PORT 3000
+ENV PORT 9000
 
 RUN mkdir -p /app/heroku/node
 RUN mkdir -p /app/src
@@ -18,7 +18,8 @@ RUN echo "export PATH=\"/app/heroku/node/bin:/app/bin:/app/src/node_modules/.bin
 RUN echo "cd /app/src" >> /app/.profile.d/nodejs.sh
 WORKDIR /app/src
 
-EXPOSE 3000
+CMD node server.js
+EXPOSE 9000
 
 ONBUILD COPY camo /app/src
 ONBUILD RUN npm install
