@@ -18,7 +18,8 @@ RUN echo "export PATH=\"/app/heroku/node/bin:/app/bin:/app/src/node_modules/.bin
 RUN echo "cd /app/src" >> /app/.profile.d/nodejs.sh
 WORKDIR /app/src
 
-CMD node server.js
+# We use exec here so that Ctrl-C works to exit the process.
+CMD exec node server.js
 EXPOSE 9000
 
 COPY camo /app/src
