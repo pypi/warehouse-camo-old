@@ -1,3 +1,4 @@
 [submodule "camo"]
 	path = camo
-	url = https://github.com/atmos/camo.git
+	url = https://github.com/di/camo.git
+	branch = content-length-redirect
